@@ -1,9 +1,12 @@
-import { NextPage } from "next"
+import { Typography } from '@mui/material';
+import { NextPage } from 'next';
 
- const HomePage:NextPage = () => {
+const HomePage: NextPage = () => {
   return (
-    <h1>Hello world</h1>
-  )
-}
+    <Typography variant="h1" color={'primary'}>
+      Hello World
+    </Typography>
+  );
+};
 
-export default HomePage
+export default HomePage;
