@@ -1,6 +1,6 @@
 export interface Entry {
   _id: string;
-  desciption: string;
+  description: string;
   createAt: number;
   status: EntryStatus;
 }

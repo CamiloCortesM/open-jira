@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const EntryCard: FC<Props> = ({ entry }) => {
-  const {desciption,createAt} = entry;
+  const { description, createAt } = entry;
   return (
     <Card
       sx={{
@@ -23,9 +23,7 @@ export const EntryCard: FC<Props> = ({ entry }) => {
     >
       <CardActionArea>
         <CardContent>
-          <Typography sx={{ whiteSpace: 'pre-line' }}>
-            {desciption}
-          </Typography>
+          <Typography sx={{ whiteSpace: 'pre-line' }}>{description}</Typography>
         </CardContent>
 
         <CardActions
