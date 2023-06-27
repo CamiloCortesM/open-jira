@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
 
             {/* {Add new entry} */}
             {/* list of entries */}
-            <EntryList />
+            <EntryList status='pending' />
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -30,7 +30,7 @@ const HomePage: NextPage = () => {
 
             {/* {Add new entry} */}
             {/* list of entries */}
-            <EntryList />
+            <EntryList status='in-progress' />
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -43,7 +43,7 @@ const HomePage: NextPage = () => {
 
             {/* {Add new entry} */}
             {/* list of entries */}
-            <EntryList />
+            <EntryList status='finished' />
           </Card>
         </Grid>
       </Grid>

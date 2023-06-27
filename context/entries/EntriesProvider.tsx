@@ -11,21 +11,22 @@ const Entries_INITIAL_STATE: EntriesState = {
   entries: [
     {
       _id: uuidv4(),
-      desciption: 'Elit ex exercitation sint nulla minim.',
+      desciption: 'Pending: Elit ex exercitation sint nulla minim.',
       status: 'pending',
       createAt: Date.now(),
     },
     {
       _id: uuidv4(),
-      desciption: 'Veniam aliquip aliquip anim nisi in reprehenderit.',
+      desciption:
+        'In Progress: Veniam aliquip aliquip anim nisi in reprehenderit.',
       status: 'in-progress',
       createAt: Date.now() - 1000000,
     },
     {
       _id: uuidv4(),
       desciption:
-        'Magna nisi incididunt adipisicing consequat velit dolor aliquip id deserunt.',
-      status: 'pending',
+        'Pending: Magna nisi incididunt adipisicing consequat velit dolor aliquip id deserunt.',
+      status: 'finished',
       createAt: Date.now() - 10000,
     },
   ],
