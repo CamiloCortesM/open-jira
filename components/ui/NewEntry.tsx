@@ -13,6 +13,12 @@ export const NewEntry = () => {
     setInputValue(event.target.value);
   };
 
+  const onSave = () => {
+    if (inputValue.length === 0) return;
+
+    console.log({ inputValue });
+  };
+
   return (
     <Box
       sx={{
@@ -46,6 +52,7 @@ export const NewEntry = () => {
               variant="outlined"
               color="secondary"
               endIcon={<SaveOutlinedIcon />}
+              onClick={onSave}
             >
               Save
             </Button>
