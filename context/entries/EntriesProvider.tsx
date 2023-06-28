@@ -9,7 +9,12 @@ export interface EntriesState {
 
 const Entries_INITIAL_STATE: EntriesState = {
   entries: [
-    
+    {
+      _id: uuidv4(),
+      description: 'Pending: Elit ex exercitation sint nulla minim.',
+      status: 'pending',
+      createAt: Date.now(),
+    },
     {
       _id: uuidv4(),
       description:
