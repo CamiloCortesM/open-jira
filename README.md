@@ -8,8 +8,11 @@ docker-compose up -d
 
 - -d, means **detached**
 
-* MongoDB Local Database
+## MongoDB Local Database
 
 ```
 mongodb://localhost:27017/entriesdb
 ```
+
+## Set environment variables
+rename file __.env.template__ to __.env__

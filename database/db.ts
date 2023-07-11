@@ -12,7 +12,7 @@ const mongooConnection = {
 
 export const connect = async () => {
   if (mongooConnection.isConected) {
-    console.log('we are already connected');
+    console.log('we were already connected');
     return;
   }
 
@@ -26,12 +26,14 @@ export const connect = async () => {
     await mongoose.disconnect();
   }
 
-  await mongoose.connect('....');
+  await mongoose.connect(process.env.MONGO_URL || '');
   mongooConnection.isConected = 1;
-  console.log('Connected to mongo db', '....');
+  console.log('Connected to mongo db', process.env.MONGO_URL);
 };
 
 export const disconnect = async () => {
+  if (!mongooConnection.isConected) return;
   await mongoose.disconnect();
+  mongooConnection.isConected = 0;
   console.log('disconnected from mongo db');
 };
