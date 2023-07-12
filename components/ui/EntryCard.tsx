@@ -28,7 +28,7 @@ export const EntryCard: FC<Props> = ({ entry }) => {
     //TODO: cancel on drag
   };
 
-  const { description, createAt } = entry;
+  const { description, createdAt } = entry;
   return (
     <Card
       sx={{
