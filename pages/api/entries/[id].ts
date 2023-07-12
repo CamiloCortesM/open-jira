@@ -1,6 +1,5 @@
 import { db } from '@/database';
 import { Entry, IEntry } from '@/models';
-import mongoose from 'mongoose';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data =
@@ -10,11 +9,6 @@ type Data =
   | IEntry;
 
 export default function (req: NextApiRequest, res: NextApiResponse<Data>) {
-  const { id } = req.query;
-
-  if (!mongoose.isValidObjectId(id)) {
-    return res.status(400).json({ message: 'The id is not valid' });
-  }
   switch (req.method) {
     case 'GET':
       return getEntry(req, res);
