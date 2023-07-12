@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useEffect, useReducer } from 'react';
 import { EntriesContext, entriesReducer } from './';
 import { Entry } from '@/interfaces';
-import { v4 as uuidv4 } from 'uuid';
+
 import entriesApi from '../../apis/entriesApi';
 
 export interface EntriesState {
