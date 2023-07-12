@@ -15,4 +15,13 @@ mongodb://localhost:27017/entriesdb
 ```
 
 ## Set environment variables
-rename file __.env.template__ to __.env__
+
+rename file **.env.template** to **.env**
+
+## Fill the database with test information
+
+call:
+
+```
+http://localhost:3000/api/seed
+```
