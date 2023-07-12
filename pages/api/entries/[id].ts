@@ -16,6 +16,8 @@ export default function (req: NextApiRequest, res: NextApiResponse<Data>) {
     return res.status(400).json({ message: 'The id is not valid' });
   }
   switch (req.method) {
+    case 'GET':
+      return getEntry(req, res);
     case 'PUT':
       return updateEntry(req, res);
 
@@ -59,12 +61,32 @@ const updateEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   } catch (error: any) {
     await db.disconnect();
     console.log(error);
-    return res
-      .status(400)
-      .json({
-        message:
-          error.errors.status.message ||
-          'something has gone wrong with the update',
-      });
+    return res.status(400).json({
+      message:
+        error.errors.status.message ||
+        'something has gone wrong with the update',
+    });
+  }
+};
+
+const getEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+  const { id } = req.query;
+  await db.connect();
+  try {
+    const entry = await Entry.findById(id);
+    if (!entry) {
+      await db.disconnect();
+      return res
+        .status(400)
+        .json({ message: 'Entry not exist for this id: ' + id });
+    }
+    await db.disconnect();
+    res.status(200).json(entry);
+  } catch (error) {
+    await db.disconnect();
+    console.log(error);
+    return res.status(500).json({
+      message: 'talk to admin',
+    });
   }
 };
